@@ -1166,6 +1166,8 @@ footer {
 /* Media query for screens smaller than 600px (typically mobile devices) */
 @media (min-width: 0px) and (max-width: 990px) { 
   .nav-bar{
+    width: 100%;
+    margin-left: 0%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1228,9 +1230,23 @@ footer {
       margin: auto;
     }
     .mobile-nav-list li{
+      width: 100%;
       font-size: 18px;
-      line-height: 26px;
-      padding: 1em 0em;
+      line-height: 026px;
+      padding: 0.8em 0.5em;
+      border: 2px solid #ffffff;
+      margin-top: 3.5em;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+      background-color: #0e3481;
+      
+    }
+    .mobile-nav-list li a{
+      padding: 1em 8em 1em 7em;
+      color: white;
+      
+      
     }
     .submenu {
       display: none;
