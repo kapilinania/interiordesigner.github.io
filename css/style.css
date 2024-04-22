@@ -680,6 +680,12 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+.project_section1{
+  width: 100%;
+  border: 0px solid red;
+  display: flex;
+  justify-content: space-between;
+}
 .project_section_left1{
   width: 40%;
   border: 0px solid red;
@@ -798,13 +804,6 @@ footer {
 .grid-gallery .grid-item-content{
   text-align: center;
 }
-.grid-gallery .grid-item-content p{
-  position: absolute;
-  font-size: 30px;
-  border: 1px solid red;
-  z-index: 999;
-}
-
 /* Let's make it responsive */
 @media (max-width: 768px) {
   .grid-gallery {
@@ -1370,6 +1369,13 @@ footer {
   .proejctLink_right{
     width: 100%;
   }
+  .project_brick {
+    margin: 2.5em 0em 0em 2em;
+}
+.project_section1{
+  flex-direction: column;
+  flex-flow: column-reverse;
+}
 
   /* -----contact css is here---  */
   .contact{
