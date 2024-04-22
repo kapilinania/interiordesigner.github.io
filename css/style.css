@@ -1434,7 +1434,9 @@ footer {
   .experiencce{
     width: 100%;
   }
-
+  .contact_detail img{
+    display: none;
+  }
 
   
 
