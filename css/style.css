@@ -784,6 +784,11 @@ footer {
   font-weight: 500;
   font-size: 40px;
 }
+.lb-data .lb-close{
+  position: relative;
+  top: -39rem;
+  right: -1rem;
+}
 
 /* Let's make it responsive */
 @media (max-width: 768px) {
@@ -1260,9 +1265,6 @@ footer {
     .mobile-nav-list li a{
       padding: 1em 7em 1em 7em;
       color: white;
-      
-      
-      
     }
     .submenu {
       display: none;
@@ -1270,6 +1272,10 @@ footer {
     
     .submenu.active {
       display: block;
+    }
+    .lb-data .lb-close{
+      position: relative;
+      top: -21rem;
     }
     
     .header_hirebutton{
