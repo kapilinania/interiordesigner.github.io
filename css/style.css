@@ -776,6 +776,14 @@ footer {
 .gallery_section{
   margin-top: 3em;
 }
+.mt-2{
+  margin-top: 2em;
+}
+ .our_projects{
+  text-align: center;
+  font-weight: 500;
+  font-size: 40px;
+}
 
 /* Let's make it responsive */
 @media (max-width: 768px) {
@@ -1337,7 +1345,11 @@ footer {
 
   /* ---proejct media query is here---  */
   .project_section{
+    width: 100%;
     flex-direction: column;
+  }
+  .project_brick p{
+    text-align: justify;
   }
   .project_section_left1 {
     width: 100%;
