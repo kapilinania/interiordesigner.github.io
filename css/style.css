@@ -676,18 +676,22 @@ footer {
   height: 100vh;
 }
 .project_section{
-  width: 100%;
+  width: 90%;
   border: 0px solid red;
   display: flex;
   justify-content: space-between;
+  margin-top: 4em;
 }
 .project_section_left1{
-  width: 40%;
+  width: 50%;
   border: 0px solid red;
+  padding: 0em 3.5em 0em 0em;
 }
-.project_brick{
-  margin: 8.5em 0em 6em 5em;
-  border: 0px solid green;
+.project_section_left12{
+  padding: 0em 0em 0em 3.5em;
+}
+.project_brick span{
+  color: var(--button-color);
 }
 .project_section_left1 h3{
   font-weight: 500;
@@ -706,7 +710,7 @@ footer {
   border: 1px solid black;
   display: table;
   border-radius: 5px;
-  margin-top: 1em;
+  margin-top: 2em;
   cursor: pointer;
 }
 .project_section_left1 .view_more:hover{
@@ -718,15 +722,17 @@ footer {
 }
 
 .project_section_right1{
-  width: 60%;
+  width: 50%;
   text-align: left;
-  transform: scale(0.9);
+  transform: scale(1);
 
 }
 .project_section_right1 img{
+  width: 100%;
   padding: 1rem;
   border: 0px solid black;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
 }
 
 /* --proejct gallery is here --  */
@@ -1342,11 +1348,21 @@ footer {
   .project_images img{
     width: 100%;
   }
-  .project_brick{
-    margin: 2.5em 0em 0em 5em;
+  .project_section_left1{
+    border: 0px solid red;
+    padding: 0em 0em 0em 0em;
+  }
+  .project_section_left12{
+    padding: 0em 0em 0em 0em;
+  }
+  .project_section_left1 h3{
+    text-align: center;
   }
   .project_link{
     flex-direction: column;
+  }
+  .second_section{
+    flex-flow: column-reverse;
   }
   .proejctLink_left{
     width: 100%;
@@ -1399,6 +1415,11 @@ footer {
 @media (min-width: 950px) and (max-width: 1350px) {
   .menus .nav-list li a{
       margin-right: 0px;
+  }
+}
+@media (min-width: 694px) and (max-width: 990px) {
+  .experience_section{
+      flex-direction: row;
   }
 }
 
