@@ -840,12 +840,16 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1em;
-  padding-top: 5em;
+  padding-top: 2.5em;
 }
 .contact_form{
-  width: 30%;
+  width: 50%;
   border: 0px solid green;
   margin-top: 3em;
+  padding: 2em;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 .contact_form h1{
   font-weight: 500;
@@ -862,6 +866,13 @@ footer {
   width: 50%;
   margin-top: 3em;
   border: 0px solid black;
+  
+}
+.contact_detail img{
+  width: 100%;
+  background-size: cover;
+  border: 0px solid red;
+  transform: scale(0.8);
 }
 .contact-group .contact_group_style{
   border-radius: 5px;
@@ -885,7 +896,7 @@ footer {
 }
 .send_message_contact{
   border: none;
-  margin:3em 0em ;
+  margin:1em 0em ;
   background-color: var(--button-color);
   color: var(--ternory-color);
   padding: 20px 25px 18px 20px;
@@ -1420,7 +1431,9 @@ footer {
   .carrer_alljob{
     width: 100%;
   }
-  
+  .experiencce{
+    width: 100%;
+  }
 
 
   
