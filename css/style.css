@@ -616,7 +616,16 @@ footer {
 }
 .about_left{
   width: 40%;
-
+}
+.about_left img{
+  width: 80%;
+  height: 78%;
+  margin: auto;
+  margin-top: 2em;
+  padding: 1em;
+  border-radius: 50% 50% 0% 0%;
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 .about_left h1{
   font-size: 40px;
@@ -839,18 +848,18 @@ footer {
   width: 100%;
   border: 0px solid red;
   display: flex;
-  justify-content: space-between;
   margin-bottom: 1em;
   padding-top: 2.5em;
 }
 .contact_form{
-  width: 50%;
-  border: 0px solid green;
+  width: 40%;
+  height: 80%;
+  border-left: 0px solid green;
   margin-top: 3em;
-  padding: 2em;
-  border: 0px solid black;
-  border-radius: 10px;
+  padding: 0em 2em;
+  border-radius: 10px 0px 0px 10px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  border-radius: 10px;
 }
 .contact_form h1{
   font-weight: 500;
@@ -867,7 +876,26 @@ footer {
   width: 50%;
   margin-top: 3em;
   border: 0px solid black;
-  
+  margin-left: 3em;
+}
+.contact_detail_mobile{
+  padding: 2em;
+  border: 0px solid green;
+}
+.contact_mobile_number{
+  font-size: 20px;
+  line-height: 40px
+}
+.contact_mobile_number span{
+  font-size: 20px;
+}
+.contact_detail iframe{
+  width: 100%;
+  margin: auto;
+  border: 1px solid red;
+  margin-top: 2em;
+  border-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 .contact_detail img{
   width: 100%;
@@ -875,11 +903,12 @@ footer {
   border: 0px solid red;
   transform: scale(0.8);
 }
+
 .contact-group .contact_group_style{
   border-radius: 5px;
   border: 1px solid #dfdfdf;
   padding: 0px 16px;
-  margin-top: 1em;
+  margin-top: 0.5em;
   height: 45px;
   margin-bottom: 1.5em;
   width: 100%;
@@ -892,7 +921,7 @@ footer {
   border: 0px solid red;
   width: 100%;
   height: 100px;
-  margin-top: 1em;
+  margin-top: 0.5em;
   border: 1px solid #dfdfdf;
 }
 .send_message_contact{
@@ -938,11 +967,7 @@ footer {
   border: 0px solid red;
   line-height: 35px;
 }
-.ifrmae_class{
-  padding: 1rem;
-  border: 5px solid white;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+
 /* ------contact css is over now ---  */
 /* ------carrer css is here----  */
 .carrer_job{
@@ -1290,7 +1315,10 @@ footer {
       z-index:  999;
     }
     
-    
+    .about_left img{
+      margin-left: 2em;
+      margin-bottom: 1em;
+    }
 
     .mobile-nav-list{
       width: 73%;
@@ -1465,7 +1493,12 @@ footer {
     display: none;
   }
 
-  
+  .contact_detail iframe{
+    width: 80%;
+  }
+  .contact_detail_mobile{
+    padding: 0px;
+  }
 
 }
 
