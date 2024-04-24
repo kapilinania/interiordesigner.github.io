@@ -21,8 +21,8 @@
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
       z-index: 1001;
-      max-width: 80%;
-      width: 400px;
+      width: 40%;
+      border: 0px solid red;
     }
 
     .overlay {
@@ -42,11 +42,7 @@
       right: -11px;
       cursor: pointer;
       font-size: 40px;
-      color: #ffffff;
-    }
-
-    .modal-content {
-      text-align: center;
+      color: black;
     }
 
     #emailForm {
@@ -55,10 +51,10 @@
 
     #emailForm label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom:4px;
     }
 
-    #emailForm input[type="email"] {
+    #emailForm input {
       width: 100%;
       padding: 10px;
       font-size: 16px;
@@ -81,6 +77,24 @@
     #emailForm button[type="submit"]:hover {
       background-color: #0056b3;
     }
+    .main_modal{
+      width: 100%;
+      display: flex;
+    }
+    .model_left{
+      width: 100%;
+      padding: 15px;
+    }
+    .model_left h2{
+      margin-bottom: 0.3em;
+    }
+    .model_left p{
+      margin-bottom: 0.3em;
+    }
+    .model_right{
+      width: 0%;
+      border: 0px solid red;
+    }
 
     @media (max-width: 768px) {
       .modal {
@@ -88,6 +102,33 @@
         max-width: 100%;
       }
     }
+    /* --swiper code is here--  */
+    .mySwiperSecond{
+      overflow: hidden;
+    }
+    .swiper-slide{
+      margin-top: 15%;
+      box-shadow: none;
+    }
+    
+    @media (min-width: 0px) and (max-width: 990px) { 
+      .main_modal{
+        flex-direction: column;
+      }
+      .model_left{
+        width: 100%;
+      }
+      .model_left h2{
+        font-size: 25px;
+      }
+      .model_left p{
+        font-size: 18px;
+      }
+      .model_right{
+        width: 100%;
+        display: none;
+      }
+     }
     </style>
   </head>
   <body>
@@ -179,13 +220,20 @@
                 <div class="modal" id="modal">
                   <span class="close-btn">&times;</span>
                   <div class="modal-content">
-                    <h2>Apply for UX Consultant</h2>
-                    <!-- <p>Please provide your email below:</p> -->
-                    <form id="emailForm">
-                      <!-- <label for="email">Email:</label> -->
-                      <input type="email" id="email" placeholder="Enter your Email Address" name="email" required>
-                      <button type="submit">Submit</button>
-                    </form>
+                    <div class="main_modal">
+                      <div class="model_left">
+                        <h2>Want to Work With Us ?</h2>
+                        <p>Just tell us about your project, what are your goals, and let's start.</p>
+                        <form id="emailForm">
+                          <label for="email">Email:</label>
+                          <input type="email" id="email" placeholder="Enter your Email Address" name="email" required>
+                          <label for="email" class="pt-1">Password:</label>
+                          <input type="email" id="text" placeholder="Enter your Password" name="email" required>
+                          <button type="submit">Submit</button>
+                        </form>
+                      </div>
+                      
+                    </div>
                   </div>
                 </div>
               <!-- Repeat this structure for other job items -->
@@ -538,6 +586,8 @@
         },
       });
     });
+
+    
     </script>
   </body>
 </html>
