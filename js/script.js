@@ -119,6 +119,11 @@ lightbox.option({
   showJob('fulltime');
 
 
+  //carrer model open and close when clik btn
+
+  
+
+
 
 
 
