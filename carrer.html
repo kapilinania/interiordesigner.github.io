@@ -87,6 +87,47 @@ margin-bottom: 0.3em;
 width: 0%;
 border: 0px solid red;
 }
+.close-btn {
+  position: absolute;
+  top: -25px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 50px;
+  color: black;
+}
+.submit_btn1{
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-family: montserrat;
+}
+.submit_btn{
+  /* background-color: #ffffff; */
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-family: montserrat;
+}
+
+/* -----button css is here--  */
+.drag-drop-btn {
+  width: 100%;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px dotted #aaa;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+  }
+  .error-msg {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  /* ---button css is closed  ---  */
 
 @media (max-width: 768px) {
 .modal {
@@ -114,6 +155,9 @@ width: 100%;
 display: none;
 }
 }
+
+
+
 </style>
 </head>
 <body>
@@ -191,11 +235,13 @@ display: none;
         <div class="container-fluid">
           <div class="container">
             <div class="open_position">
-              <h2 class="text-center mb-4">Open Positions</h2>
+              <h2 class="text-center mb-4"  >Open Positions</h2>
               <p>Let's write some beautiful code and make smart designs. This is what we're crazy about, and we're looking for the ones who feel the same.</p>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repudiandae animi veniam accusantium quam veritatis officia optio. Dolorum, et veniam?</p>
               <div class="carrer_alljob">
-                <div class="text-center"><a href="" class="btn">Apply For Job</a></div>
+                <div class="text-center">
+                  <button type="submit" class="btn submit_btn1 mt-2" onclick="openModal()">Apply For Job</button>
+                </div>
 
                   
               </div>   
@@ -209,7 +255,7 @@ display: none;
                       <p class="mt-3">INTERIORS</p>
                       </div>
                     <div class="mt-3">EXPERIENCE  2 to 4 years</div>
-                    <a href="" class="btn mt-4">Apply Now</a>
+                    <button type="submit" class="btn submit_btn mt-2 " onclick="openModal()">Apply For Job</button>
                   </div>
                 </div>
                 <!-- ---second--  -->
@@ -220,7 +266,7 @@ display: none;
                       <p class="mt-3">INTERIORS</p>
                       </div>
                     <div class="mt-3">EXPERIENCE  2 to 4 years</div>
-                    <a href="" class="btn mt-4">Apply Now</a>
+                    <button type="submit" class="btn submit_btn mt-2" onclick="openModal()">Apply For Job</button>
                   </div>
                 </div>
                 <!-- -----third---  -->
@@ -231,7 +277,7 @@ display: none;
                       <p class="mt-3">INTERIORS</p>
                       </div>
                     <div class="mt-3">EXPERIENCE  2 to 4 years</div>
-                    <a href="" class="btn mt-4">Apply Now</a>
+                    <button type="submit" class="btn submit_btn mt-2" onclick="openModal()">Apply For Job</button>
                   </div>
                 </div>
               </div>
@@ -241,13 +287,13 @@ display: none;
           <!-- ----model code is here full time ---  -->
           <div class="overlay" id="overlay"></div>
                 <div class="modal" id="modal">
-                  <span class="close-btn">&times;</span>
+                  <span class="close-btn" onclick="closeModal()">&times;</span>
                   <div class="modal-content">
                     <div class="main_modal">
                       <div class="model_left">
                         <h2>Want to Work With Us ?</h2>
                         <p>Just tell us about your project, what are your goals, and let's start.</p>
-                        <form id="emailForm">
+                        <form id="emailForm" action="your_submit_url_here" method="POST" enctype="multipart/form-data">
                           <div class="form-group">
                               <label for="role">Applying for:</label>
                               <select id="role" class="form-control" name="role" required>
@@ -315,17 +361,27 @@ display: none;
                       
                           <div class="carrer_name">
                             <div class="form-group">
-                              <label for="resume">Upload Resume:</label>
-                              <input type="file" id="resume" class="form-control-file" name="resume" accept=".pdf,.doc,.docx" required>
+                              <div class="drag-drop-btn" id="resume-btn">
+                                <label for="resume-upload">
+                                  <i class="fas fa-file-upload"></i> Click to Upload Resume
+                                </label>
+                                <input id="resume-upload" type="file" style="display: none;" accept=".pdf,.doc,.docx" onchange="validateFile(this, 'resume')">
+                              </div>
+                              <div class="error-msg" id="resume-error" style="display: none;"></div>
+                            </div>
+                          
+                            <div class="form-group">
+                              <div class="drag-drop-btn" id="portfolio-btn">
+                                <label for="portfolio-upload">
+                                  <i class="fas fa-file-upload"></i> Click to Upload Portfolio
+                                </label>
+                                <input id="portfolio-upload" type="file" style="display: none;" accept=".pdf,.doc,.docx" onchange="validateFile(this, 'portfolio')">
+                              </div>
+                              <div class="error-msg" id="portfolio-error" style="display: none;"></div>
+                            </div>
                           </div>
                       
-                          <div class="form-group">
-                              <label for="portfolio">Upload Portfolio:</label>
-                              <input type="file" id="portfolio" class="form-control-file" name="portfolio" accept=".pdf,.doc,.docx" required>
-                          </div>
-                          </div>
-                      
-                          <button type="submit" class="btn mt-4">Submit</button>
+                          <button type="submit" class="btn mt-4" id="submitButton">Submit</button>
                       </form>
                       
                       </div> 
@@ -341,10 +397,48 @@ display: none;
               <p>Let's write some beautiful code and make smart designs. This is what we're crazy about, and we're looking for the ones who feel the same.</p>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum repudiandae animi veniam accusantium quam veritatis officia optio. Dolorum, et veniam?</p>
               <div class="carrer_alljob">
-                  <div class="text-center"><a href="" class="btn">Apply For Internship</a></div>
-                  
+                  <div class="text-center"><a href="" class="btn">Apply For Internship</a></div>  
               </div>   
             </div>
+
+            <div class="full_time_job mt-3">
+              <div class="grid_container_carrer">
+                <div class="grid_item_carrer">
+                  <div class="grid_item_carrer_content">
+                    <div class="grid_item_carrer_content1">
+                      <h1>Interior Designer</h1>
+                      <p class="mt-3">INTERIORS</p>
+                      </div>
+                    <div class="mt-3">EXPERIENCE  2 to 4 years</div>
+                    <a href="" class="btn mt-4">Apply Now</a>
+                  </div>
+                </div>
+                <!-- ---second--  -->
+                <div class="grid_item_carrer">
+                  <div class="grid_item_carrer_content">
+                    <div class="grid_item_carrer_content1">
+                      <h1>Interior Designer</h1>
+                      <p class="mt-3">INTERIORS</p>
+                      </div>
+                    <div class="mt-3">EXPERIENCE  2 to 4 years</div>
+                    <a href="" class="btn mt-4">Apply Now</a>
+                  </div>
+                </div>
+                <!-- -----third---  -->
+                <div class="grid_item_carrer">
+                  <div class="grid_item_carrer_content">
+                    <div class="grid_item_carrer_content1">
+                      <h1>Interior Designer</h1>
+                      <p class="mt-3">INTERIORS</p>
+                      </div>
+                    <div class="mt-3">EXPERIENCE  2 to 4 years</div>
+                    <a href=""  class="btn mt-4">Apply Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
         </div>
 
@@ -438,49 +532,33 @@ display: none;
   
 <!-- carrer model open and close btn is here -->
 <script>
-  // Get references to the modal, overlay, and form
-  var modal = document.getElementById('modal');
-  var overlay = document.getElementById('overlay');
-  var emailForm = document.getElementById('emailForm');
+function openModal() {
+  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('modal').style.display = 'block';
+}
 
-  // Get all "Apply Now" buttons
-  var applyButtons = document.querySelectorAll('.btn');
+function closeModal() {
+  document.getElementById('overlay').style.display = 'none';
+  document.getElementById('modal').style.display = 'none';
+}
 
-  // Add click event listener to each "Apply Now" button
-  applyButtons.forEach(function(button) {
-    button.addEventListener('click', function(event) {
-      // Prevent the default form submission behavior
-      event.preventDefault();
+//js function is carrer input button 
+function validateFile(input, type) {
+  const allowedFormats = [".pdf", ".doc", ".docx"];
+  const fileName = input.files[0].name;
+  const fileExtension = fileName.substring(fileName.lastIndexOf('.')).toLowerCase();
+  const errorMsg = document.getElementById(`${type}-error`);
 
-      // Display the modal and overlay
-      modal.style.display = 'block';
-      overlay.style.display = 'block';
-    });
-  });
-
-  // Get the close button
-  var closeButton = document.querySelector('.close-btn');
-
-  // Add click event listener to the close button
-  closeButton.addEventListener('click', function() {
-    // Hide the modal and overlay
-    modal.style.display = 'none';
-    overlay.style.display = 'none';
-  });
-
-  // Add click event listener to the overlay
-  overlay.addEventListener('click', function() {
-    // Hide the modal and overlay
-    modal.style.display = 'none';
-    overlay.style.display = 'none';
-  });
-
-  // Add submit event listener to the form
-  emailForm.addEventListener('submit', function() {
-    // Hide the modal and overlay
-    modal.style.display = 'none';
-    overlay.style.display = 'none';
-  });
+  if (!allowedFormats.includes(fileExtension)) {
+    errorMsg.innerText = "Please enter a valid format (.pdf, .doc, .docx)";
+    errorMsg.style.display = "block";
+    input.value = ""; // Clear the file input
+  } else {
+    const btn = document.getElementById(`${type}-btn`);
+    btn.innerHTML = `<label for="${type}-upload"><i class="fas fa-file-upload"></i> ${fileName}</label>`;
+    errorMsg.style.display = "none";
+  }
+}
 </script>
 
 
